@@ -10,4 +10,21 @@
 
 //Algorythm executed in taking photo
 { function.algorythm
-  when press.camera on camera_
+  when press.camera on camera.mif
+   do analyze.Level
+    if analyze.Level=1
+     do C3,C2,G7,S5,G2,N8,J4,J9,G5,J4,H6,X8,B6,X1,M9,V4
+     else
+      do analyze.Level
+       if analyze.Level=2
+        do A4,S2,S3,D3,A3,D4,G4,A2,A3
+         else
+          do analyze.Level
+           if analyze.Level=3
+            do V7,B7,B8,M5,C4,X8,B5,K7,M6,B7,N6,B7,V8,M5
+             else
+              do analyze.Level
+               if analyze.Level=4
+                do V4,C2,V3,B5,B4,X3,B5,B3,X4,S3,A2,A2,A2,A6
+                 else
+                  mija.printOut("Photo could not be taken. Error:392")
