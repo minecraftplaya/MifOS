@@ -1,0 +1,28 @@
+//Class, no deFound
+
+{ code.MiJa_class
+
+{ call.functionSet="CLASS_NOFOUND"
+ call.functionSet="CLASS_ERROR"
+ call.functionSet="CLASS_MIJA" }
+ 
+//Class, noFound error
+
+{ function.editProps;
+ if error.function"CLASS_NOFOUND"
+  then classRun.function"CLASS_ERROR" }
+  
+  
+  
+//Class, error
+{ if function"CLASS_ERROR"
+  then mija.printOut="MIJA.CLASS_ERROR::PLEASE REINSTALL OS (mija.error;mija.searchClass expected 0 but got 1)"
+   end }
+
+//Class, mija
+
+{ class.MIJA;
+ if function.classRun=false
+  then os.shutDown(1s)
+  else os.reBoot(1s)
+   end }}
