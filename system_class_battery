@@ -1,0 +1,42 @@
+//The core of the code
+
+{ code.BatteryCheck
+
+{ code.startCode=function.HEAT
+code.secondCode=function.Temp
+if function.Temp=true
+ then down
+code.thirdCode=function.Alarm
+code.ignoreCode=functionProps="screen.popUp" }
+
+{ call.functionSet="HEAT"
+call.functionSet="Alarm"
+call.functionSet="Temp"
+call.functionProps="screen.popUp" }
+
+//Function for Screen popup
+{ function.editProps;
+ if screen.popUp=true
+  then screen.notification::
+  ::mija.printOut="Warning, battery might overheat. (Over 50C)"
+   end }
+
+//The part where it checks the temp
+{ function.editProps;
+ if HEAT=temp(50)
+  then function.Alarm
+  else code.reRun }
+ 
+//Function for Alarm
+{ function.editProps;
+ if Alarm=true
+  then screen.popUp::
+  ::sound.play -- system\error.ogg
+   end }
+
+//Function for Temp
+{ function.editProps;
+ phoneCheck.systemHardWare;
+ if system.hardWare.batteryHeat=50
+  then function.Alarm
+   end }}
