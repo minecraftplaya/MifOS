@@ -1,0 +1,46 @@
+//System Clock code by MinecraftSm60fan for MiOS_0.0012a
+//The core of the code, the functions
+{ code.clockTime
+
+{ code.startCode=function.complexCode
+ code.secondCode=function.loop }
+
+{ call.functionSet="SECOND:s"
+call.functionSet="MINUTE:min"
+call.functionSet="HOUR:h" }
+
+//Time ticks, seconds
+{ function.editProps;
+ timeTick=20
+  20!timeTick=1s }
+
+//Loop
+{ function.loop(20t);
+  timeTick.tick=1s
+   end }
+
+//Time ticks, minutes
+{ function.editProps;
+ timeTick=1s
+  60!timeTick=1min }
+
+//Time ticks, hours
+{ function.editProps;
+ timeTick=1min
+  60!timeTick=1h }
+
+//Clock
+{ function.complexCode;
+ mija.displayOnTopScreen="min:h"
+ mija.clockThink="24h=1d"
+ if timeTick=1h
+  then mija.displayOnTopScreen:changeUp="1h"
+ if mija.clockThink=24:00
+  then mija.displayOnTopScreen:changeDown="24h"
+   end }
+  
+//Reset
+{ function.reset
+ if click.$mijaClockReset
+  then mija.displayOnTopScreen:reset"00:00"
+   end }}
