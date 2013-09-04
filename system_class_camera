@@ -1,0 +1,13 @@
+//Camera class by MinecraftSm60fan(aka minecraftplaya) for MiOS
+//The core of the code, the functions
+{ code.cameraApp
+
+{ code.startCode=function.complexCode
+ code.algorythm=function.do }
+ 
+{ call.functionSet="algorythm"
+ call.functionSet="function.do" }
+
+//Algorythm executed in taking photo
+{ function.algorythm
+  when press.camera on camera_
