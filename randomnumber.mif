@@ -1,0 +1,11 @@
+//The core of the code
+{ code.randomNumber
+
+//Picks a random number
+{ if click.$RandomNumber
+ then number.pickRandom(!number=1-10) 
+  end }
+
+//Displays the number on the screen
+{ mija.printOut="!number" }
+ end }
